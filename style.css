@@ -1,4 +1,4 @@
-/* --- Global Resets & Typography --- */
+/* --- Global Resets & Variables --- */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@ span {
     margin-bottom: 40px;
 }
 
-/* --- Header & Navigation --- */
+/* --- Header & Navigation (Flexbox Layout) --- */
 header {
     background-color: #1e293b;
     position: sticky;
@@ -54,24 +54,26 @@ header {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
     color: #f8fafc;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #38bdf8;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section (Flexbox Centering) --- */
 .hero-section {
     height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -96,6 +98,12 @@ header {
     margin: 0 auto 30px;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 /* --- Buttons --- */
 .btn {
     display: inline-block;
@@ -103,7 +111,6 @@ header {
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    margin: 5px;
     transition: all 0.3s ease;
 }
 
@@ -127,26 +134,34 @@ header {
     color: #0f172a;
 }
 
-/* --- Cards & Sections --- */
+/* --- Section Dividers --- */
 .about-section, .skills-section, .education-section, .contact-section {
     border-bottom: 1px solid #334155;
 }
 
+/* --- Technical Skills (CSS Grid Layout) --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
 }
 
 .skill-card {
     background-color: #1e293b;
-    padding: 20px;
+    padding: 25px 20px;
     text-align: center;
     border-radius: 8px;
     border: 1px solid #334155;
     font-weight: 600;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+/* --- Education Section --- */
 .education-card {
     background-color: #1e293b;
     padding: 30px;
@@ -154,28 +169,36 @@ header {
     border-left: 4px solid #38bdf8;
 }
 
-/* --- Contact Form --- */
+/* --- Contact Form (Flexbox Stack) --- */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: #1e293b;
     border: 1px solid #334155;
     border-radius: 6px;
     color: #f8fafc;
+    font-size: 1rem;
 }
 
-/* --- Footer --- */
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* --- Footer (Flexbox) --- */
 footer {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
     background-color: #020617;
     color: #64748b;
     font-size: 0.9rem;
