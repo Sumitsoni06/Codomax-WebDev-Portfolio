@@ -29,12 +29,11 @@
         <div class="hero-content">
             <h3>Hello, I'm</h3>
             <h1>Sumit Soni</h1>
-            <h2>B.Tech Software Engineering & Machine Learning Student</h2>
-            <p>I build responsive web applications, interactive tools, and end-to-end machine learning pipelines.</p>
+            <h2>Software Engineering & ML Student</h2>
+            <p>I build interactive web applications and end-to-end machine learning pipelines.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn primary-btn">Get In Touch</a>
-                <!-- Updated href and download attribute to point to your exact resume PDF -->
-                <a href="SumitSoni_Resume.pdf" download="SumitSoni_Resume.pdf" class="btn secondary-btn">📄 Download Resume</a>
+                <a href="#" download="Sumit_Soni_Resume.pdf" class="btn secondary-btn">Download Resume</a>
             </div>
         </div>
     </section>
