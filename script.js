@@ -1,4 +1,3 @@
-// --- Wait for DOM to load ---
 document.addEventListener("DOMContentLoaded", () => {
     
     // 1. Scroll To Top Button Feature
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTopBtn.innerHTML = "↑";
     document.body.appendChild(scrollTopBtn);
 
-    // Style button dynamically via JS DOM manipulation
     Object.assign(scrollTopBtn.style, {
         position: "fixed",
         bottom: "30px",
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         transition: "opacity 0.3s ease"
     });
 
-    // Show/Hide button on scroll
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
             scrollTopBtn.style.display = "block";
@@ -35,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Scroll smoothly to top on click
     scrollTopBtn.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
@@ -43,13 +39,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. Contact Form Interactive Event
-    const contactForm = document.querySelector(".contact-form");
+    // 2. Day 10 Form Validation
+    const contactForm = document.getElementById("contactForm");
+    const nameInput = document.getElementById("userName");
+    const emailInput = document.getElementById("userEmail");
+    const messageInput = document.getElementById("userMessage");
+    const successMsg = document.getElementById("formSuccess");
+
     if (contactForm) {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            alert("Thank you for reaching out! Your message has been recorded.");
-            contactForm.reset();
+            
+            // Clear previous state
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+            successMsg.textContent = "";
+
+            let isValid = true;
+
+            if (nameInput.value.trim().length < 3) {
+                document.getElementById("nameError").textContent = "Name must be at least 3 characters long.";
+                isValid = false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            if (messageInput.value.trim().length < 10) {
+                document.getElementById("messageError").textContent = "Message must be at least 10 characters long.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                successMsg.textContent = "Thank you, " + nameInput.value + "! Your message has been sent successfully.";
+                contactForm.reset();
+            }
         });
     }
 });

@@ -33,7 +33,6 @@
             <p>I build interactive web applications and end-to-end machine learning pipelines.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn primary-btn">Get In Touch</a>
-                <!-- Day 9 Resume Download Button -->
                 <a href="#" download="Sumit_Soni_Resume.pdf" class="btn secondary-btn">Download Resume</a>
             </div>
         </div>
@@ -52,7 +51,7 @@
         </div>
     </section>
 
-    <!-- Technical Skills Section (Day 9 Enhanced) -->
+    <!-- Technical Skills Section -->
     <section id="skills" class="skills-section">
         <div class="container">
             <h2 class="section-title">Technical <span>Skills</span></h2>
@@ -73,7 +72,7 @@
         </div>
     </section>
 
-    <!-- Experience Section (Day 9) -->
+    <!-- Experience Section -->
     <section id="experience" class="experience-section">
         <div class="container">
             <h2 class="section-title">Work <span>Experience</span></h2>
@@ -141,22 +140,32 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Form & Social Section (Day 10) -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Contact <span>Me</span></h2>
-            <form class="contact-form">
+            
+            <div class="social-links">
+                <a href="https://github.com/Sumitsoni06" target="_blank" class="social-btn">GitHub Profile</a>
+                <a href="https://www.linkedin.com/in/sumit-soni" target="_blank" class="social-btn">LinkedIn Profile</a>
+            </div>
+
+            <form class="contact-form" id="contactForm">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" id="userName" placeholder="Your Name" required>
+                    <span class="error-msg" id="nameError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" id="userEmail" placeholder="Your Email" required>
+                    <span class="error-msg" id="emailError"></span>
                 </div>
                 <div class="form-group">
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <textarea id="userMessage" rows="5" placeholder="Your Message" required></textarea>
+                    <span class="error-msg" id="messageError"></span>
                 </div>
                 <button type="submit" class="btn primary-btn">Send Message</button>
             </form>
+            <div id="formSuccess" class="success-msg"></div>
         </div>
     </section>
 
