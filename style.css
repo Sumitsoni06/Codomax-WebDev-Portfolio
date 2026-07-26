@@ -203,3 +203,58 @@ footer {
     color: #64748b;
     font-size: 0.9rem;
 }
+/* ==========================================
+   Day 6: Responsive Breakpoints & Media Queries
+   ========================================== */
+
+/* --- Tablet Devices (<= 768px) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 40px 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+/* --- Mobile Devices (<= 480px) --- */
+@media (max-width: 480px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        font-size: 0.9rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .education-card {
+        padding: 20px;
+    }
+}
