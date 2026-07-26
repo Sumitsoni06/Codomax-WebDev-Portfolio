@@ -135,7 +135,7 @@ header {
 }
 
 /* --- Section Dividers --- */
-.about-section, .skills-section, .education-section, .contact-section {
+.about-section, .skills-section, .projects-section, .education-section, .contact-section {
     border-bottom: 1px solid #334155;
 }
 
@@ -159,6 +159,56 @@ header {
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: #38bdf8;
+}
+
+/* --- Projects Section (CSS Grid) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #38bdf8;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #f8fafc;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    background-color: #0f172a;
+    color: #38bdf8;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 /* --- Education Section --- */
@@ -203,8 +253,9 @@ footer {
     color: #64748b;
     font-size: 0.9rem;
 }
+
 /* ==========================================
-   Day 6: Responsive Breakpoints & Media Queries
+   Responsive Breakpoints & Media Queries
    ========================================== */
 
 /* --- Tablet Devices (<= 768px) --- */
