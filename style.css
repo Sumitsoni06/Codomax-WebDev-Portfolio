@@ -28,7 +28,7 @@ span {
     margin-bottom: 40px;
 }
 
-/* --- Header & Navigation (Flexbox Layout) --- */
+/* --- Header & Navigation --- */
 header {
     background-color: #1e293b;
     position: sticky;
@@ -69,7 +69,7 @@ header {
     color: #38bdf8;
 }
 
-/* --- Hero Section (Flexbox Centering) --- */
+/* --- Hero Section --- */
 .hero-section {
     height: 80vh;
     display: flex;
@@ -135,25 +135,33 @@ header {
 }
 
 /* --- Section Dividers --- */
-.about-section, .skills-section, .projects-section, .education-section, .contact-section {
+.about-section, .skills-section, .experience-section, .projects-section, .education-section, .contact-section {
     border-bottom: 1px solid #334155;
 }
 
-/* --- Technical Skills (CSS Grid Layout) --- */
+/* --- Technical Skills Grid --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
 .skill-card {
     background-color: #1e293b;
-    padding: 25px 20px;
-    text-align: center;
+    padding: 25px;
     border-radius: 8px;
     border: 1px solid #334155;
-    font-weight: 600;
     transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card h4 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.skill-card p {
+    color: #cbd5e1;
 }
 
 .skill-card:hover {
@@ -161,7 +169,36 @@ header {
     border-color: #38bdf8;
 }
 
-/* --- Projects Section (CSS Grid) --- */
+/* --- Experience Section --- */
+.experience-card {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #38bdf8;
+}
+
+.experience-card h3 {
+    font-size: 1.3rem;
+    color: #f8fafc;
+}
+
+.experience-card .company {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.experience-card .duration {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.experience-card ul {
+    margin-left: 20px;
+    color: #cbd5e1;
+}
+
+/* --- Projects Section --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -219,7 +256,7 @@ header {
     border-left: 4px solid #38bdf8;
 }
 
-/* --- Contact Form (Flexbox Stack) --- */
+/* --- Contact Form --- */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -243,7 +280,7 @@ header {
     border-color: #38bdf8;
 }
 
-/* --- Footer (Flexbox) --- */
+/* --- Footer --- */
 footer {
     display: flex;
     justify-content: center;
@@ -254,11 +291,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ==========================================
-   Responsive Breakpoints & Media Queries
-   ========================================== */
-
-/* --- Tablet Devices (<= 768px) --- */
+/* --- Responsive Media Queries --- */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -278,11 +311,10 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
 
-/* --- Mobile Devices (<= 480px) --- */
 @media (max-width: 480px) {
     .nav-links {
         flex-wrap: wrap;
@@ -305,7 +337,7 @@ footer {
         text-align: center;
     }
 
-    .education-card {
+    .education-card, .experience-card {
         padding: 20px;
     }
 }
