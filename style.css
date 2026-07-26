@@ -1,4 +1,8 @@
-/* --- Global Resets & Variables --- */
+/* --- Global Resets & Smooth Scrolling --- */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +30,18 @@ span {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 40px;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- Header & Navigation --- */
@@ -69,7 +85,7 @@ header {
     color: #38bdf8;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section with Animations --- */
 .hero-section {
     height: 80vh;
     display: flex;
@@ -79,6 +95,7 @@ header {
     text-align: center;
     background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
     padding: 0 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .hero-content h1 {
@@ -104,7 +121,7 @@ header {
     gap: 15px;
 }
 
-/* --- Buttons --- */
+/* --- Buttons with Enhanced Hover Effects --- */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -122,6 +139,8 @@ header {
 .primary-btn:hover {
     background-color: #0284c7;
     color: #ffffff;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px);
 }
 
 .secondary-btn {
@@ -132,6 +151,8 @@ header {
 .secondary-btn:hover {
     background-color: #38bdf8;
     color: #0f172a;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px);
 }
 
 /* --- Section Dividers --- */
@@ -151,7 +172,7 @@ header {
     padding: 25px;
     border-radius: 8px;
     border: 1px solid #334155;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card h4 {
@@ -167,6 +188,7 @@ header {
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: #38bdf8;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Experience Section --- */
@@ -175,6 +197,11 @@ header {
     padding: 30px;
     border-radius: 8px;
     border-left: 4px solid #38bdf8;
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateX(5px);
 }
 
 .experience-card h3 {
@@ -213,12 +240,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-6px);
     border-color: #38bdf8;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project-card h3 {
@@ -273,11 +301,13 @@ header {
     border-radius: 6px;
     color: #f8fafc;
     font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
 }
 
 /* --- Social Links & Form Validation Styling --- */
@@ -301,6 +331,7 @@ header {
 .social-btn:hover {
     background-color: #38bdf8;
     color: #0f172a;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
 .error-msg {
